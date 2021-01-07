@@ -1,0 +1,53 @@
+
+#about {
+    height: auto;
+    background-color: inherit;
+    display: flex; justify-content:center; align-items:center;
+
+  }
+    #corners {
+      border-radius: 25px;
+      padding: 20px; 
+      width: 50%;
+      background-image: linear-gradient(to right,rgb(89, 0, 255) ,rgb(130, 213, 238)); /* Standard syntax (must be last) */
+      margin-left: 25px;
+  
+    }
+  
+    
+    dl {
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+  
+    }
+    dt {
+      float: left;
+      width: 40%;
+      padding: 0;
+      margin: 0;
+      font-size:17px
+    }
+    dd {
+      float: left;
+      width: 60%;
+      padding: 0;
+      margin: 0;
+      font-size:17px
+    }
+    img{
+      max-height: 400px; 
+      max-width: 400px;   
+     
+
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+  
+  

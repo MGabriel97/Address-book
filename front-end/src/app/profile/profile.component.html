@@ -1,0 +1,33 @@
+<div style="text-align: center; margin: 3% 10%">
+    <h1>Contact</h1>
+    <h2>{{contact.name}}</h2>
+<div class="w3-container" id="about">
+<div class="w3-content"  id="corners">
+      <div *ngIf=retrievedImage>           
+        <div class="container row">
+            <div class="col-md-6">
+            </div>
+        </div>
+        
+    </div>
+    <dl >
+        <br>    
+        <div style="float:left;"> 
+        <input  type="file" style="display:none" (change)="onFileChanged($event)" accept="image/*" #file >
+
+        <dt >Photo:</dt>
+        <dd > <img  (click)="file.click()" [src]="retrievedImage" style="cursor: pointer; " class="center"></dd>
+        <dt >Name:</dt>
+        <dd >{{contact.name}}</dd>
+        <dt >Address:</dt>
+        <dd >{{contact.address}}</dd>
+        <dd style="margin-top: 25px;margin-left: -50px;"><app-modal-edit [contact]="contact"></app-modal-edit>   </dd>
+      </div> 
+      </dl>
+
+</div>
+
+</div>
+<button type="button" style="margin-top:25px" class="btn btn-danger"  routerLinkActive="active current"  routerLink="/search">Go back to search page</button>
+
+</div>

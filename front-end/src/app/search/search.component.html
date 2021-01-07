@@ -1,0 +1,54 @@
+<div style="text-align: center; margin: 3% 28%">
+    <h1>Contacts</h1>
+    
+    <div class="search">
+            <div class="searchin">
+              <p style="font-size: 13px;margin-left: 10px;"><b>Search for</b></p>
+            </div>
+            <div class="forp" style="display:table-cell;width: 25%;margin-top: 45px;">
+              <p >Name:</p>
+              <p >Address:</p>
+          </div>
+          <div class="forinput" style="margin-top: 45px;">
+              <form (ngSubmit)="onSubmit(fm)" #fm="ngForm" style="margin-top: 45px;">
+                     <div class="form-group">
+                         <input type="text"  class="form-control" ngModel name="name" >
+                     </div>
+                     <div class="form-group" style="margin-top: 10px;">
+                         <input type="text"  class="form-control" ngModel name="address">
+                     </div>   
+                     <button class="btn btn-primary" type="submit" style="margin-top: 5%;margin-bottom: 5%;">
+                      Search contact
+                    </button>
+               </form>
+           </div>
+    </div>
+
+            <div class="barnew">
+                <app-modal></app-modal>
+            </div>
+ 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element" (click)="setStorage(element)" ><button 
+        style="border: none;
+        background-color: transparent;
+        outline: none;"  [routerLink]="['/profile',element]">{{element.name}} </button> </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element" > {{element.address}} </td>
+    </ng-container>
+  
+
+ 
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
